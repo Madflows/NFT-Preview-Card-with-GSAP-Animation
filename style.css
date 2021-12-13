@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
+
+:root {
+  --soft-blue: #8bacda;
+  --cyan: #00fff7;
+  --main-bg: #0d192b;
+  --card-bg: #14253d;
+  --line: #2f415b;
+  --white: #ffffff;
+}
+
+body{
+    background: var(--main-bg);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.card{
+    width: 300px;
+    min-height: 450px;
+    height: fit-content;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.image--section{
+    height: 60%;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    /* A little bit of border radius */
+    border-radius: 7px;
+}
+/* Lets hide the image overlay for now */
+
+.image--section img{
+    width: 100%;
+}
+
+
+/* Lets Move over to the text section */
+
+.text--section{
+    color: #fff;
+}
+
+.mainText{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 1rem 0;
+    margin-bottom: .5rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.mainText:hover{
+    color: var(--cyan);
+}
+
+.subText{
+    font-size: 14px;
+    color: var(--soft-blue);
+    margin-bottom: 1rem;
+}
+
+
+/* The protfolio Section */
+.portfolio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.amount, .days{
+    color: var(--cyan);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: .3rem;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.days{
+    color: var(--soft-blue);
+    font-weight: 300;
+}
+
+
+/* Lets get working on the image */
+
+.owner--section{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: .5rem;
+    border-top: 1px solid var(--line);
+    padding-top: .5rem;
+}
+
+.owner--section .image{
+    display: flex;
+    align-items: center;
+}
+
+.owner--section .image img{
+    width: 35px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.owner--section .name{
+    color: var(--soft-blue);
+    font-size: 13px;
+}
+
+.owner--section .name span{
+    color: #fff;
+    cursor: pointer;
+}
+
+.owner--section .name span:hover{
+    color: var(--cyan);
+}
+
+/* Lets not forget about the image overlay, guys */
+
+.image-overlay{
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #00fff75d;
+    opacity: 0;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.image-overlay img{
+    width: 50px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.image-overlay:hover{
+    opacity: 1;
+}
+
+
+/* Lets's Start Animating with GSAP */
+/* You Can Get the CDN from the link in the description */
+/* I am using a downloaded version of the CDN */
